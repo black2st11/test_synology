@@ -2,13 +2,13 @@ import requests
 import json
 import sys
 
-chat_api_url = sys.argv[2]
-git_repository = sys.argv[3]
-git_message_id = sys.argv[4]
-git_message = sys.argv[5]
-git_url = sys.argv[6]
-git_timestamp = sys.argv[7]
-status = sys.argv[8]
+chat_api_url = sys.argv[1]
+git_repository = sys.argv[2]
+git_message_id = sys.argv[3]
+git_message = sys.argv[4]
+git_url = sys.argv[5]
+git_timestamp = sys.argv[6]
+status = sys.argv[7]
 json_data = json.dumps({"text": f"repository: {git_repository}\n status: {status} \n message_id: {git_message_id} \n message: {git_message} \n git_url: <{git_url}> \n timestamp: {git_timestamp}"})
 
 res = requests.post(
