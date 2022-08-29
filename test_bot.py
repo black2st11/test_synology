@@ -1,22 +1,30 @@
 import requests
 import json
 import sys
+import argparse
 
-print(sys.argv)
+parser = argparse.ArgumentParser()
 
-chat_api_url = sys.argv[1]
-git_repository = sys.argv[2]
-git_message_id = sys.argv[3]
-git_message = sys.argv[4]
-git_url = sys.argv[5]
-git_timestamp = sys.argv[6]
-status = sys.argv[7]
-json_data = json.dumps({"text": f">>> *REPOSITORY* : {git_repository}\n *STATUS* : {status}\n *MESSAGE_ID* : {git_message_id}\n *MESSAGE* : {git_message}\n *GIT_URL* : {git_url}\n *TIMESTAMP* : {git_timestamp}"})
+parser.add_argument('-chat_api_url', help='enter your chat api url')
+parser.add_argument('-repository', help='enter your git respository')
+parser.add_argument('-status', help='return status')
+parser.add_argument('-message_id', help='enter your git message id')
+parser.add_argument('-message', help='enter your git message')
+parser.add_argument('-git_url', help='enter your git url')
+parser.add_argument('-timestamp', help='enter your push timestamp')
 
-res = requests.post(
-    chat_api_url,
-    {'payload': json_data},
-    headers={'Content-Type': 'application/json'}
-)
+args = parser.parse_args()
 
-print(res.text)
+def send_synology_chat(args):
+
+    json_data = json.dumps({"text": f" *REPOSITORY* : {args.repository}\n *STATUS* : {args.status}\n *MESSAGE_ID* : {args.message_id}\n *MESSAGE* : {args.message}\n *GIT_URL* : {args.git_url}\n *TIMESTAMP* : {args.timestamp}"})
+    print(json_data)
+    res = requests.post(
+        args.chat_api_url,
+        {'payload': json_data},
+        headers={'Content-Type': 'application/json'}
+    )
+    print(res)
+
+if __name__ == '__main__':
+    send_synology_chat(args)

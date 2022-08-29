@@ -43,8 +43,7 @@ jobs:
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'SUCCESS'
       run: |
-        python test_bot.py $CHAT_API_URL $REPOSITORY $MESSAGE_ID $MESSAGE $MESSAGE_URL $TIMESTAMP $STATUS
-
+        python test_bot.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -message_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
     - name: fail run
       shell: bash
       if: failure()
@@ -57,4 +56,4 @@ jobs:
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'FAILURE'
       run: |
-        python test_bot.py $CHAT_API_URL $REPOSITORY $MESSAGE_ID $MESSAGE $MESSAGE_URL $TIMESTAMP $STATUS
+        python test_bot.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -message_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
