@@ -24,7 +24,6 @@ def send_synology_chat(args):
         {'payload': json_data},
         headers={'Content-Type': 'application/json'}
     )
-    print(res)
 
 if __name__ == '__main__':
     send_synology_chat(args)
