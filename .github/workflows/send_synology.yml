@@ -33,6 +33,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: test
+      run: |
+        pytest
+
     - name: run
       env: 
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
