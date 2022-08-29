@@ -43,7 +43,7 @@ jobs:
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'SUCCESS'
       run: |
-        python test_bot.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -git_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
+        python send_synology.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -git_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
     - name: fail run
       shell: bash
       if: failure()
@@ -56,4 +56,4 @@ jobs:
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'FAILURE'
       run: |
-        python test_bot.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -git_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
+        python send_synology.py -chat_api_url $CHAT_API_URL -repository $REPOSITORY -message_id $MESSAGE_ID -message $MESSAGE -git_url $MESSAGE_URL -timestamp $TIMESTAMP -status $STATUS
