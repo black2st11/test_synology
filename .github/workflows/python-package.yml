@@ -43,4 +43,4 @@ jobs:
     - name: fail run
       if: failure()
       run: |
-        python test_boy.py fail
+        python test_bot.py fail
