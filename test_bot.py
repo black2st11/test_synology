@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 def send_synology_chat(args):
 
-    json_data = json.dumps({"text": f" *REPOSITORY* : {args.repository}\n *STATUS* : {args.status}\n *MESSAGE_ID* : {args.message_id}\n *MESSAGE* : {args.message}\n *GIT_URL* : {args.git_url}\n *TIMESTAMP* : {args.timestamp}"})
+    json_data = json.dumps({"text": f"Github \n *REPOSITORY* : {args.repository}\n *STATUS* : {args.status}\n *MESSAGE_ID* : {args.message_id}\n *MESSAGE* : {args.message}\n *GIT_URL* : {args.git_url}\n *TIMESTAMP* : {args.timestamp}"})
     print(json_data)
     res = requests.post(
         args.chat_api_url,
