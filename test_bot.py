@@ -2,6 +2,8 @@ import requests
 import json
 import sys
 
+print(sys.argv)
+
 chat_api_url = sys.argv[1]
 git_repository = sys.argv[2]
 git_message_id = sys.argv[3]
