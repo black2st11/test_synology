@@ -61,4 +61,4 @@ jobs:
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'failure'
       run: |
-        python test_bot.py ${{secrets.SYNOLOGY_CHAT_API_URL}} ${{ithub.event.repository.full_name}} ${{github.event.repository.full_name}} ${{github.event.head_commit.message}} ${{github.event.head_commit.message_id}} ${{github.event.head_commit.url}} ${{github.event.head_commit.timestamp}} failure
+        python test_bot.py ${{secrets.SYNOLOGY_CHAT_API_URL}} ${{github.event.repository.full_name}} ${{github.event.repository.full_name}} ${{github.event.head_commit.message}} ${{github.event.head_commit.message_id}} ${{github.event.head_commit.url}} ${{github.event.head_commit.timestamp}} failure
