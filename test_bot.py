@@ -2,11 +2,17 @@ import requests
 import json
 import sys
 
+chat_api_url = sys.argv[2]
+git_repository = sys.argv[3]
+git_message_id = sys.argv[4]
+git_message = sys.argv[5]
+git_url = sys.argv[6]
+git_timestamp = sys.argv[7]
+status = sys.argv[8]
+json_data = json.dumps({"text": f"repository: {git_repository}\n status: {status} \n message_id: {git_message_id} \n message: {git_message} \n git_url: <{git_url}> \n timestamp: {git_timestamp}"})
 
-json_data = json.dumps({"text": f"{sys.argv[1]}"})
 res = requests.post(
-    
-'https://odn.i234.me:5001/webapi/entry.cgi?api=SYNO.Chat.External&method=incoming&version=2&token=%22ja5RT3U26Z0vKr3wzRoFVv9Ewft7dm1WUTu8N6X3yZTIgc6bhj8uWOT4Vb4RYrrY%22',
+    chat_api_url,
     {'payload': json_data},
     headers={'Content-Type': 'application/json'}
 )
