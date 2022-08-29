@@ -41,7 +41,7 @@ jobs:
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
         REPOSITORY: ${{github.event.repository.full_name}}
         MESSAGE: ${{github.event.head_commit.message}}
-        MESSAGE_ID: ${{github.event.head_commit.message_id}}
+        MESSAGE_ID: ${{github.event.head_commit.id}}
         MESSAGE_URL: ${{github.event.head_commit.url}}
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'success'
@@ -55,7 +55,7 @@ jobs:
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
         REPOSITORY: ${{github.event.repository.full_name}}
         MESSAGE: ${{github.event.head_commit.message}}
-        MESSAGE_ID: ${{github.event.head_commit.message_id}}
+        MESSAGE_ID: ${{github.event.head_commit.id}}
         MESSAGE_URL: ${{github.event.head_commit.url}}
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
         STATUS: 'failure'
