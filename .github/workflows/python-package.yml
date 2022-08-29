@@ -50,6 +50,7 @@ jobs:
 
 
     - name: fail run
+      shell: bash
       if: failure()
       env: 
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
