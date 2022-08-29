@@ -37,6 +37,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: run
+      shell: cmd
       env: 
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
         REPOSITORY: ${{github.event.repository.full_name}}
@@ -50,6 +51,7 @@ jobs:
 
 
     - name: fail run
+      shell: cmd
       if: failure()
       env: 
         CHAT_API_URL: ${{secrets.SYNOLOGY_CHAT_API_URL}}
