@@ -44,7 +44,7 @@ jobs:
         MESSAGE_ID: ${{github.event.head_commit.id}}
         MESSAGE_URL: ${{github.event.head_commit.url}}
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
-        STATUS: 'success'
+        STATUS: 'SUCCESS'
       run: |
         python test_bot.py $CHAT_API_URL $REPOSITORY $MESSAGE_ID $MESSAGE $MESSAGE_URL $TIMESTAMP $STATUS
 
@@ -58,6 +58,6 @@ jobs:
         MESSAGE_ID: ${{github.event.head_commit.id}}
         MESSAGE_URL: ${{github.event.head_commit.url}}
         TIMESTAMP: ${{github.event.head_commit.timestamp}}
-        STATUS: 'failure'
+        STATUS: 'FAILURE'
       run: |
         python test_bot.py $CHAT_API_URL $REPOSITORY $MESSAGE_ID $MESSAGE $MESSAGE_URL $TIMESTAMP $STATUS

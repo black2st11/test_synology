@@ -11,7 +11,7 @@ git_message = sys.argv[4]
 git_url = sys.argv[5]
 git_timestamp = sys.argv[6]
 status = sys.argv[7]
-json_data = json.dumps({"text": f"repository: {git_repository}\nstatus: {status} \nmessage_id: {git_message_id} \nmessage: {git_message} \ngit_url: {git_url} \ntimestamp: {git_timestamp}"})
+json_data = json.dumps({"text": f">>>*REPOSITORY*: {git_repository}\n*STATUS*: {status} \n*MESSAGE_ID*: {git_message_id} \n*MESSAGE*: {git_message} \n*GIT_URL*: {git_url} \n*TIMESTAMP*: {git_timestamp}"})
 
 res = requests.post(
     chat_api_url,
